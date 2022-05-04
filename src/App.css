@@ -1,9 +1,10 @@
 /* MAX-HEIGHT 1270PX MAX WIDTH 696PX */
-.App {
+.App,
+#root {
   text-align: center;
-
-  width: 1270px;
-  height: 696px;
+  max-width: 1146px;
+  max-height: 630px;
+  /* overflow: hidden; */
 }
 
 .App-logo {
