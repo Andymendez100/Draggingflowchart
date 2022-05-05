@@ -5,7 +5,7 @@
       "title": "Receive Initial Telescope Assy Spec from SEIT",
       "allowed": [2],
       "endAnchor": "auto",
-      "startAnchor": "bottom",
+      "startAnchor": "top",
       "row": 7,
       "column": 1
     },
@@ -13,7 +13,7 @@
       "id": 2,
       "title": "Develop Inital Telescope Design",
       "allowed": [3],
-      "endAnchor": "top",
+      "endAnchor": "bottom",
       "startAnchor": "right",
       "row": 6,
       "column": 1
@@ -77,7 +77,7 @@
       "title": "Prepare LL Optics TDP for SCM",
       "allowed": [10],
       "endAnchor": "left",
-      "startAnchor": "top",
+      "startAnchor": "right",
       "row": 4,
       "column": 4
     },
@@ -86,10 +86,11 @@
       "title": "Place LL Optics PR/PO",
       "allowed": [14],
       "endAnchor": "left",
-      "startAnchor": "right",
+      "startAnchor": { "position": "top", "offset": { "y": -1 } },
       "row": 4,
       "column": 5,
-      "cust"
+      "_cpy1Offset": -30,
+      "_cpy2Offset": -30
     },
     {
       "id": 11,
@@ -103,7 +104,7 @@
     {
       "id": 12,
       "title": "Create Telescope Assembly Planning",
-      "allowed": [15],
+      "allowed": [15, 17],
       "endAnchor": "left",
       "startAnchor": "right",
       "row": 5,
@@ -148,7 +149,7 @@
     {
       "id": 17,
       "title": "Create WFE Test Procedure",
-      "allowed": [18],
+      "allowed": [15],
       "endAnchor": "bottom",
       "startAnchor": "right",
       "row": 5,

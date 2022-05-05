@@ -19,7 +19,9 @@ const Grid: React.FC = () => {
     end: '',
     allowed: '',
     endAnchor: '',
-    startAnchor: '',
+    startAnchor: {},
+    _cpy1Offset: 0,
+    _cpy2Offset: 0,
   });
   const [arrows, setArrows] = useState<
     {
@@ -28,7 +30,9 @@ const Grid: React.FC = () => {
       allowed: string;
       color?: string;
       endAnchor: string;
-      startAnchor: string;
+      startAnchor: string | {};
+      _cpy1Offset: number;
+      _cpy2Offset: number;
     }[]
   >([]);
   let gridHeight = 7;
@@ -125,6 +129,7 @@ const Grid: React.FC = () => {
       currentArrow.start !== currentTarget &&
       disconnect.length === 0
     ) {
+      // add second point
       setArrows(
         arrows.concat([
           {
@@ -132,7 +137,6 @@ const Grid: React.FC = () => {
             start: currentArrow.start,
             end: currentTarget,
             allowed: currentArrow.allowed,
-
             endAnchor: GridCards.data[indexData].endAnchor,
           },
         ])
@@ -143,6 +147,8 @@ const Grid: React.FC = () => {
         allowed: '',
         endAnchor: '',
         startAnchor: '',
+        _cpy1Offset: 0,
+        _cpy2Offset: 0,
       });
     }
     // check if this exists in state
@@ -154,18 +160,20 @@ const Grid: React.FC = () => {
         allowed: '',
         endAnchor: '',
         startAnchor: '',
+        _cpy1Offset: 0,
+        _cpy2Offset: 0,
       });
     } else {
-      console.log(
-        'test',
-        GridCards.data[parseInt(currentTarget.split('draggableCard')[1] + 1)]
-      );
+      console.log('GridCards.data[indexData]', GridCards.data[indexData]);
+      // create new line
       setCurrentArrow({
         ...currentArrow,
         start: currentTarget,
         allowed: event.target.parentNode.dataset.allowed,
         // endAnchor: '',
         startAnchor: GridCards.data[indexData].startAnchor,
+        _cpy1Offset: GridCards.data[indexData]._cpy1Offset || 0,
+        _cpy2Offset: GridCards.data[indexData]._cpy2Offset || 0,
       });
     }
   };
@@ -235,17 +243,17 @@ const Grid: React.FC = () => {
             headColor={arrow.color ? arrow.color : '#3568c1'}
             path='grid'
             // showHead={true}
-            startAnchor={{ position: 'top', offset: { y: -1 } }}
+            // startAnchor={{ position: 'top', offset: { y: -1 } }}
             // arrowHeadProps={{ transform: 'rotate(180deg)' }}
             // endAnchor={{ position: 'top', offset: { y: -40 } }}
             // gridBreak='50'
             endAnchor={arrow.endAnchor as anchorType}
-            // startAnchor={arrow.startAnchor as anchorType}
+            startAnchor={arrow.startAnchor as anchorType}
             strokeWidth={3}
             // headSize={6}
             // _debug={true}
-            _cpy1Offset={-30}
-            _cpy2Offset={-30}
+            _cpy1Offset={arrow._cpy1Offset}
+            _cpy2Offset={arrow._cpy2Offset}
           />
         ))}
         {/* <div id='grid-heading'>Telescope Assembly Network Diagram</div> */}
