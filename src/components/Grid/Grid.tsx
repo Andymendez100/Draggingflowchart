@@ -92,12 +92,12 @@ const Grid: React.FC = () => {
           {Array.from(Array(width)).map((column: any, index: number) => {
             if (index === 0 && rowindex > 1) {
               return (
-                <td data-column={index} key={index} id='swim-lane-box'>
+                <td key={index} id='swim-lane-box'>
                   <span id='swim-lanes'>{rowSwimLanes[rowindex - 2]}</span>
                 </td>
               );
             }
-            return <td data-column={index + 1} key={index}></td>;
+            return <td data-column={index} key={index}></td>;
           })}
         </tr>
       );
@@ -107,8 +107,6 @@ const Grid: React.FC = () => {
   const handleConnection = (event: any) => {
     const currentTarget = event.target.parentNode.id;
     const indexData = currentTarget.split('draggableCard')[1] - 1;
-    console.log('currentTarget', indexData);
-    console.log('GridCards', GridCards.data[indexData].startAnchor);
     const remove: number[] = [];
     const disconnect = arrows.filter((arrow, index) => {
       const condition =
@@ -127,7 +125,6 @@ const Grid: React.FC = () => {
       currentArrow.start !== currentTarget &&
       disconnect.length === 0
     ) {
-      console.log('endAnchor', GridCards.data[indexData]);
       setArrows(
         arrows.concat([
           {
@@ -174,7 +171,9 @@ const Grid: React.FC = () => {
   };
 
   const checkGrid = () => {
-    return setArrows(
+    let incorrectShowing = false;
+    let previousItem: any;
+    setArrows(
       arrows.map((lines) => {
         const search = lines.end.replace('draggableCard', '');
         if (lines.allowed.split(',').includes(search)) {
@@ -184,6 +183,44 @@ const Grid: React.FC = () => {
         return { ...lines, color: 'red' };
       })
     );
+    // Check grid here
+    GridCards.data.map((cards) => {
+      const currentCard = document.querySelector(
+        `[data-id='${cards.id}'] `
+      ) as Element;
+      const correctGridLocation = document.querySelector(
+        `[data-row='${cards.row}'] [data-column='${cards.column}'] `
+      ) as any;
+      const gridBoundaries = correctGridLocation.getBoundingClientRect();
+      const cardLocation = currentCard.getBoundingClientRect();
+      if (
+        cardLocation.x > gridBoundaries.left &&
+        cardLocation.x < gridBoundaries.right &&
+        cardLocation.y > gridBoundaries.top &&
+        cardLocation.y < gridBoundaries.bottom
+      ) {
+        previousItem = currentCard;
+
+        correctGridLocation.style.backgroundColor = '#fff';
+      } else {
+        if (!incorrectShowing) {
+          incorrectShowing = true;
+          if (previousItem) {
+            previousItem.dataset.allowed.split(',').map((allowedCards: any) => {
+              console.log('allowedCards', allowedCards);
+              const hintCard = GridCards.data[parseInt(allowedCards) - 1];
+              console.log('hintCard.column', hintCard);
+              const hintCardGridLocation = document.querySelector(
+                `[data-row='${hintCard.row}'] [data-column='${hintCard.column}'] `
+              ) as any;
+              hintCardGridLocation.style.backgroundColor = 'red';
+            });
+          } else {
+            correctGridLocation.style.backgroundColor = 'red';
+          }
+        }
+      }
+    });
   };
 
   return (
@@ -197,14 +234,18 @@ const Grid: React.FC = () => {
             lineColor={arrow.color ? arrow.color : '#3568c1'}
             headColor={arrow.color ? arrow.color : '#3568c1'}
             path='grid'
+            // showHead={true}
+            startAnchor={{ position: 'top', offset: { y: -1 } }}
+            // arrowHeadProps={{ transform: 'rotate(180deg)' }}
+            // endAnchor={{ position: 'top', offset: { y: -40 } }}
+            // gridBreak='50'
             endAnchor={arrow.endAnchor as anchorType}
-            startAnchor={arrow.startAnchor as anchorType}
-            // gridBreak='50px'
-            // _cpx1Offset={-150}
-            // _cpy1Offset={-36}
-            // _cpx2Offset={150}
-            // _cpy2Offset={-38}
-            strokeWidth={2}
+            // startAnchor={arrow.startAnchor as anchorType}
+            strokeWidth={3}
+            // headSize={6}
+            // _debug={true}
+            _cpy1Offset={-30}
+            _cpy2Offset={-30}
           />
         ))}
         {/* <div id='grid-heading'>Telescope Assembly Network Diagram</div> */}

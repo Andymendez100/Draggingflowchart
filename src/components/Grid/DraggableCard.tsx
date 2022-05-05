@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Draggable from 'react-draggable';
 import { useXarrow } from 'react-xarrows';
 
@@ -8,6 +8,28 @@ declare module 'react-draggable' {
   }
 }
 
+// const handleOnStop = (event: any) => {
+//   updateXarrow();
+//   if (event.target.classList.contains('card')) {
+//     let card = event.target.children;
+//     const g = document.getElementById('grid');
+//     const gData = g?.getBoundingClientRect();
+//     const insideGridCheck =
+//       event.y > (gData?.top || -1) &&
+//       event.y < (gData?.bottom || -1) &&
+//       event.x > (gData?.left || -1) &&
+//       event.x < (gData?.right || -1);
+
+//     if (insideGridCheck) {
+//       card[0]?.classList.remove('hidden');
+//     }
+
+//     if (!insideGridCheck && !card[0]?.classList.contains('hidden')) {
+//       card[0]?.classList.add('hidden');
+//     }
+//   }
+// };
+
 const DraggableCard: React.FC<{
   cardData: any;
   id: string;
@@ -16,8 +38,6 @@ const DraggableCard: React.FC<{
   const nodeRef = React.useRef<HTMLDivElement>(null);
 
   const updateXarrow = useXarrow();
-
-
 
   return (
     <Draggable
@@ -34,7 +54,6 @@ const DraggableCard: React.FC<{
         data-allowed={cardData.allowed}
       >
         <img
-          // className='hidden'
           src='./link.png'
           alt=''
           onClick={(event) => {
