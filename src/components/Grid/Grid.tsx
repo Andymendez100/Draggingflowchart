@@ -6,7 +6,37 @@ import GridCards from './gridData.json';
 import DraggableCard from './DraggableCard';
 import './Grid.css';
 
+// column-row : id
+const solutionsCards = {
+  '1-7': 1,
+  '1-6': 2,
+  '2-6': 3,
+  '3-6': 4,
+  '4-4': 9,
+  '4-6': 5,
+  '5-4': 10,
+  '5-6': 6,
+  '5-7': 8,
+  '6-6': 7,
+  '7-4': 11,
+  '7-5': 12,
+  '8-4': 13,
+  '8-5': 17,
+  '9-4': 14,
+  '9-7': 16,
+  '10-5': 15,
+  '12-5': 18,
+  '12-7': 19,
+  '12-3': 20,
+  '13-3': 21,
+};
+
 const Grid: React.FC = () => {
+  const [correct, setCorrect] = useState<number[]>([]);
+  // If both are complete that means the activity is done
+  const [arrowsComplete, setArrowsComplete] = useState(false);
+  const [gridComplete, setGridComplete] = useState(false);
+
   const rowSwimLanes = [
     'Telescope Assy Sell-Off',
     'Telescope Assy Procurement',
@@ -49,7 +79,6 @@ const Grid: React.FC = () => {
                   <td
                     data-column={cardindex}
                     key={cardindex}
-                    // id='swim-lane-box'
                     className='draggableBox'
                   >
                     <DraggableCard
@@ -57,6 +86,7 @@ const Grid: React.FC = () => {
                       cardData={card}
                       key={cardindex}
                       handleConnection={handleConnection}
+                      disabled={correct}
                     />
                   </td>
                 );
@@ -82,6 +112,7 @@ const Grid: React.FC = () => {
                       cardData={card}
                       key={cardindex}
                       handleConnection={handleConnection}
+                      disabled={correct}
                     />
                   </td>
                 );
@@ -112,6 +143,8 @@ const Grid: React.FC = () => {
     const currentTarget = event.target.parentNode.id;
     const indexData = currentTarget.split('draggableCard')[1] - 1;
     const remove: number[] = [];
+
+    // Disconnect arrow
     const disconnect = arrows.filter((arrow, index) => {
       const condition =
         (arrow.start === currentArrow.start && arrow.end === currentTarget) ||
@@ -129,6 +162,8 @@ const Grid: React.FC = () => {
       currentArrow.start !== currentTarget &&
       disconnect.length === 0
     ) {
+      const startCardIndex = currentTarget.split('draggableCard')[1] - 1;
+      event.target.style.backgroundColor = 'white';
       // add second point
       setArrows(
         arrows.concat([
@@ -141,6 +176,16 @@ const Grid: React.FC = () => {
           },
         ])
       );
+      setTimeout(() => {
+        // Get First card
+        const startCard = document.querySelector(
+          `[data-id='${startCardIndex}'] `
+        ) as any;
+        const childElement: HTMLImageElement = startCard.children[0];
+        // Change background for on click
+        childElement.style.backgroundColor = 'transparent';
+        event.target.style.backgroundColor = 'transparent';
+      }, 1000);
       setCurrentArrow({
         start: '',
         end: '',
@@ -164,7 +209,7 @@ const Grid: React.FC = () => {
         _cpy2Offset: 0,
       });
     } else {
-      console.log('GridCards.data[indexData]', GridCards.data[indexData]);
+      event.target.style.backgroundColor = 'white';
       // create new line
       setCurrentArrow({
         ...currentArrow,
@@ -179,53 +224,71 @@ const Grid: React.FC = () => {
   };
 
   const checkGrid = () => {
-    let incorrectShowing = false;
-    let previousItem: any;
+    let incorrectColumn: string;
+    let incorrectLine = false;
     setArrows(
-      arrows.map((lines) => {
+      arrows.map((lines, i) => {
         const search = lines.end.replace('draggableCard', '');
         if (lines.allowed.split(',').includes(search)) {
           // correct
+          console.log('i', i);
+          if (i === 22 && !incorrectLine) {
+            // All arrows are correct
+            setArrowsComplete(true);
+            if (gridComplete) {
+              alert('finished');
+            }
+          }
           return { ...lines, color: 'green' };
         }
+        // clears incorrect arrows after 3 seconds
+        setTimeout(() => {
+          setArrows((arrows) =>
+            arrows.filter(
+              (line) => line.start !== lines.start && line.end !== lines.end
+            )
+          );
+        }, 3000);
+        incorrectLine = true;
         return { ...lines, color: 'red' };
       })
     );
     // Check grid here
-    GridCards.data.map((cards) => {
-      const currentCard = document.querySelector(
-        `[data-id='${cards.id}'] `
-      ) as Element;
+    Object.entries(solutionsCards).forEach(([key, value], i, array) => {
+      const solutionKey = key.split('-');
+
       const correctGridLocation = document.querySelector(
-        `[data-row='${cards.row}'] [data-column='${cards.column}'] `
-      ) as any;
+        `[data-row='${solutionKey[1]}'] [data-column='${solutionKey[0]}'] `
+      ) as HTMLElement;
+      const currentCard = document.querySelector(
+        `[data-id='${value}'] `
+      ) as HTMLElement;
       const gridBoundaries = correctGridLocation.getBoundingClientRect();
       const cardLocation = currentCard.getBoundingClientRect();
+
       if (
         cardLocation.x > gridBoundaries.left &&
         cardLocation.x < gridBoundaries.right &&
         cardLocation.y > gridBoundaries.top &&
         cardLocation.y < gridBoundaries.bottom
       ) {
-        previousItem = currentCard;
-
+        currentCard.style.backgroundColor = 'green';
         correctGridLocation.style.backgroundColor = '#fff';
-      } else {
-        if (!incorrectShowing) {
-          incorrectShowing = true;
-          if (previousItem) {
-            previousItem.dataset.allowed.split(',').map((allowedCards: any) => {
-              console.log('allowedCards', allowedCards);
-              const hintCard = GridCards.data[parseInt(allowedCards) - 1];
-              console.log('hintCard.column', hintCard);
-              const hintCardGridLocation = document.querySelector(
-                `[data-row='${hintCard.row}'] [data-column='${hintCard.column}'] `
-              ) as any;
-              hintCardGridLocation.style.backgroundColor = 'red';
-            });
-          } else {
-            correctGridLocation.style.backgroundColor = 'red';
+
+        setCorrect((prevState: number[]) => {
+          // Object.assign would also work
+          return [...prevState, value];
+        });
+        if (array.length === i + 1) {
+          setGridComplete(true);
+          if (arrowsComplete) {
+            alert('finished');
           }
+        }
+      } else {
+        if (!incorrectColumn || incorrectColumn === solutionKey[0]) {
+          incorrectColumn = solutionKey[0];
+          correctGridLocation.style.backgroundColor = 'red';
         }
       }
     });
@@ -242,23 +305,14 @@ const Grid: React.FC = () => {
             lineColor={arrow.color ? arrow.color : '#3568c1'}
             headColor={arrow.color ? arrow.color : '#3568c1'}
             path='grid'
-            // showHead={true}
-            // startAnchor={{ position: 'top', offset: { y: -1 } }}
-            // arrowHeadProps={{ transform: 'rotate(180deg)' }}
-            // endAnchor={{ position: 'top', offset: { y: -40 } }}
-            // gridBreak='50'
             endAnchor={arrow.endAnchor as anchorType}
             startAnchor={arrow.startAnchor as anchorType}
-            strokeWidth={3}
-            // headSize={6}
-            // _debug={true}
+            strokeWidth={2}
+            headSize={4}
             _cpy1Offset={arrow._cpy1Offset}
             _cpy2Offset={arrow._cpy2Offset}
           />
         ))}
-        {/* <div id='grid-heading'>Telescope Assembly Network Diagram</div> */}
-        {/* <div id='card-container'>{renderCardRows(buildCardRows())}</div> */}
-        {/* 5x14 */}
         <div id='grid-container'>
           <table id='grid'>
             <span id='swim-lane-background'></span>

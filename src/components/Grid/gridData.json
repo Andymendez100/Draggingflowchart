@@ -5,81 +5,63 @@
       "title": "Receive Initial Telescope Assy Spec from SEIT",
       "allowed": [2],
       "endAnchor": "auto",
-      "startAnchor": "top",
-      "row": 7,
-      "column": 1
+      "startAnchor": "top"
     },
     {
       "id": 2,
       "title": "Develop Inital Telescope Design",
       "allowed": [3],
       "endAnchor": "bottom",
-      "startAnchor": "right",
-      "row": 6,
-      "column": 1
+      "startAnchor": "right"
     },
     {
       "id": 3,
       "title": "Generate Inital Telescope Drawings",
       "allowed": [4],
       "endAnchor": "left",
-      "startAnchor": "right",
-      "row": 6,
-      "column": 2
+      "startAnchor": "right"
     },
     {
       "id": 4,
       "title": "Complete First Order Analysis",
       "allowed": [5, 9],
       "endAnchor": "left",
-      "startAnchor": "auto",
-      "row": 6,
-      "column": 3
+      "startAnchor": "auto"
     },
     {
       "id": 5,
       "title": "Hold Table Top Review - Telescope Assembly",
       "allowed": [6],
       "endAnchor": "left",
-      "startAnchor": "right",
-      "row": 6,
-      "column": 4
+      "startAnchor": "right"
     },
     {
       "id": 6,
       "title": "Update Telescope Design",
       "allowed": [7],
       "endAnchor": "auto",
-      "startAnchor": "right",
-      "row": 6,
-      "column": 5
+      "startAnchor": "right"
     },
     {
       "id": 7,
       "title": "Release Final Telescope Drawings",
       "allowed": [11, 12, 17],
       "endAnchor": "left",
-      "startAnchor": "auto",
-      "row": 6,
-      "column": 6
+      "startAnchor": "auto"
     },
     {
       "id": 8,
       "title": "Receive Updated Telescope Assy Spec from SEIT",
       "allowed": [6],
       "endAnchor": "auto",
-      "startAnchor": "bottom",
-      "row": 7,
-      "column": 5
+      "startAnchor": "bottom"
     },
     {
       "id": 9,
       "title": "Prepare LL Optics TDP for SCM",
       "allowed": [10],
       "endAnchor": "left",
-      "startAnchor": "right",
-      "row": 4,
-      "column": 4
+      "startAnchor": "right"
     },
     {
       "id": 10,
@@ -87,8 +69,6 @@
       "allowed": [14],
       "endAnchor": "left",
       "startAnchor": { "position": "top", "offset": { "y": -1 } },
-      "row": 4,
-      "column": 5,
       "_cpy1Offset": -30,
       "_cpy2Offset": -30
     },
@@ -97,99 +77,77 @@
       "title": "Prepare Structural TDP for SCM",
       "allowed": [13],
       "endAnchor": "left",
-      "startAnchor": "right",
-      "row": 4,
-      "column": 7
+      "startAnchor": "right"
     },
     {
       "id": 12,
       "title": "Create Telescope Assembly Planning",
       "allowed": [15, 17],
       "endAnchor": "left",
-      "startAnchor": "right",
-      "row": 5,
-      "column": 7
+      "startAnchor": "right"
     },
     {
       "id": 13,
       "title": "Place Structural PR/PO",
       "allowed": [14],
       "endAnchor": "auto",
-      "startAnchor": "right",
-      "row": 4,
-      "column": 8
+      "startAnchor": "right"
     },
     {
       "id": 14,
       "title": "Receive Structural Material and Optics Material",
       "allowed": [15],
       "endAnchor": "top",
-      "startAnchor": "bottom",
-      "row": 4,
-      "column": 9
+      "startAnchor": "bottom"
     },
     {
       "id": 15,
       "title": "Build Telescope",
       "allowed": [18],
       "endAnchor": "auto",
-      "startAnchor": "right",
-      "row": 5,
-      "column": 10
+      "startAnchor": "right"
     },
     {
       "id": 16,
       "title": "Receive Lift Fixture Adapter from SEIT",
       "allowed": [15],
       "endAnchor": "auto",
-      "startAnchor": "right",
-      "row": 7,
-      "column": 9
+      "startAnchor": "right"
     },
     {
       "id": 17,
       "title": "Create WFE Test Procedure",
       "allowed": [15],
       "endAnchor": "bottom",
-      "startAnchor": "right",
-      "row": 5,
-      "column": 8
+      "startAnchor": "right"
     },
     {
       "id": 18,
       "title": "Test Telescope",
       "allowed": [20],
       "endAnchor": "auto",
-      "startAnchor": "top",
-      "row": 5,
-      "column": 12
+      "startAnchor": "top"
     },
     {
       "id": 19,
       "title": "Receive Telescope WFE STE from STE",
       "allowed": [18],
       "endAnchor": "auto",
-      "startAnchor": "top",
-      "row": 7,
-      "column": 12
+      "startAnchor": "top"
     },
     {
       "id": 20,
       "title": "Complete Telescope Assy Requirements Sell off",
       "allowed": [21],
       "endAnchor": "bottom",
-      "startAnchor": "right",
-      "row": 3,
-      "column": 12
+      "startAnchor": "right"
     },
     {
       "id": 21,
       "title": "Give Telescope Assy to SEIT",
       "allowed": [],
       "endAnchor": "auto",
-      "startAnchor": "right",
-      "row": 3,
-      "column": 13
+      "startAnchor": "right"
     }
   ]
 }

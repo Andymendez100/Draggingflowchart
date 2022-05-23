@@ -25,6 +25,7 @@
   width: 70px;
   height: 75px;
   margin: 1.5px 7.5px;
+  z-index: 1;
 }
 .card.over {
   border: 2px dashed #000;
@@ -90,6 +91,8 @@ tr td:last-child {
   background-color: #3568c1;
   color: white;
   width: fit-content;
+  cursor: none;
+  z-index: -1;
 }
 #swim-lane-background {
   height: 622px;
