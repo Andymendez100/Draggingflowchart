@@ -1,0 +1,1260 @@
+{
+  "data": [
+    {
+      "tasks/wp": "Kickoff Milestone",
+      "fillerRow": false,
+      "budgetHours": 0,
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "2-Jun",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "2-Jun",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Telescope Assembly",
+      "fillerRow": true
+    },
+    {
+      "tasks/wp": "Telescope IPTL Management",
+      "fillerRow": false,
+      "budgetHours": "6,066.81hrs",
+      "budgetDollars": 1147171,
+      "evt": "LOE",
+      "description": {},
+      "baselineStartMonth": "2-Jun",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "2-Jun",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 49877,
+          "July": 49877,
+          "Aug": 49877,
+          "Sep": 49877,
+          "Oct": 49877,
+          "Nov": 49877,
+          "Dec": 49877
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 49877,
+          "Feb": 49877,
+          "March": 49877,
+          "April": 49877,
+          "May": 49877,
+          "June": 49877,
+          "July": 49877,
+          "Aug": 49877,
+          "Sep": 49877,
+          "Oct": 49877,
+          "Nov": 49877,
+          "Dec": 49877
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 49877,
+          "Feb": 49877,
+          "March": 49877,
+          "April": 49877
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Telescope Recievers",
+      "fillerRow": true
+    },
+    {
+      "tasks/wp": "Receive Inital Telescope Assy Spec from SEIT",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "2-Jun",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "2-Jun",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Receive Updated Telescope Assy Spec from SEIT",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "15-Nov",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "15-Nov",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Receive Lift Fixture Adapter from SEIT",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "1-Nov",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "1-Nov",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Receive Telescope WFE STE from SEIT/STE",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "1-Nov",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "1-Nov",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Telescope Assy Design",
+      "fillerRow": true
+    },
+    {
+      "tasks/wp": "Develop Initial Telescope Design",
+      "fillerRow": false,
+      "budgetHours": "613.81hrs",
+      "budgetDollars": 117707,
+      "evt": "% COMPLETE",
+      "description": {
+        "MS1": "Completed Product Strucuture Definition (30%)",
+        "MS2": "Held Concept Review (30%)",
+        "MS3": "All artifacts complete (40%)"
+      },
+      "baselineStartMonth": "2-Jun",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "31-Aug",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 35312,
+          "July": 35312,
+          "Aug": 47083,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Generate Initial Telescope Dwgs",
+      "fillerRow": false,
+      "budgetHours": "525.35hrs",
+      "budgetDollars": 103445,
+      "evt": "50-50",
+      "description": {},
+      "baselineStartMonth": "1-Sep",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "13-Oct",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 51722,
+          "Oct": 51722,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "First Order Analysis - Telescope Assy",
+      "fillerRow": false,
+      "budgetHours": "253.21hrs",
+      "budgetDollars": 49830,
+      "evt": "0-100",
+      "description": {},
+      "baselineStartMonth": "14-Oct",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "29-Oct",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 49830,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Tabletop Review (TTR)-Telescope Assy Design",
+      "fillerRow": false,
+      "budgetHours": "138.29hrs",
+      "budgetDollars": 27227,
+      "evt": "0-100",
+      "description": {},
+      "baselineStartMonth": "1-Nov",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "30-Nov",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 27227,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Update Telescope Design",
+      "fillerRow": false,
+      "budgetHours": "417.93hrs",
+      "budgetDollars": 82454,
+      "evt": "40-60",
+      "description": {},
+      "baselineStartMonth": "1-Dec",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "6-Jan",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 32981
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 49472,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Release Final Telescope Dwgs",
+      "fillerRow": false,
+      "budgetHours": "165.65hrs",
+      "budgetDollars": 33257,
+      "evt": "25-75",
+      "description": {},
+      "baselineStartMonth": "7-Jan",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "10-Feb",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 8314,
+          "Feb": 24943,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Telescope Assy Procurement",
+      "fillerRow": true
+    },
+    {
+      "tasks/wp": "Prepare Optics TDP for SCM - Telescope Assy",
+      "fillerRow": false,
+      "budgetHours": "21.34hrs",
+      "budgetDollars": 4196,
+      "evt": "0-100",
+      "description": {},
+      "baselineStartMonth": "1-Nov",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "12-Nov",
+      "baselineFinishYear": "Year 1",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 4196,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Place PR/PO - Telescope Assy (Optics)",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "No EV",
+      "description": {},
+      "baselineStartMonth": "15-Nov",
+      "baselineStartYear": "Year 1",
+      "baselineFinishMonth": "6-Jan",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Lead Time Parts - Telescope Assy (Optics)",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "No EV",
+      "description": {},
+      "baselineStartMonth": "7-Jan",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "18-Oct",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Receive Dock-to-Stock - Telescope Assy (Optics)",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 392075,
+      "evt": "0-100",
+      "description": {
+        "MS1": "Lot 1 material received (40%)",
+        "MS2": "All material received (60%)"
+      },
+      "baselineStartMonth": "19-Oct",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "15-Nov",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 156830,
+          "Nov": 235245,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Prepare Structural TDP for SCM - Telescope Assy",
+      "fillerRow": false,
+      "budgetHours": "21.34hrs",
+      "budgetDollars": 4282,
+      "evt": "0-100",
+      "description": {},
+      "baselineStartMonth": "11-Feb",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "24-Feb",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Place PR/PO - Telescope Assy (Structural)",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "25-Feb",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "7-Apr",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Lead Time Parts - Telescope Assy (Structural)",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "8-Apr",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "22-Nov",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Receive Dock-to-Stock - Telescope Assy (Structural)",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 284503,
+      "evt": "% COMPLETE",
+      "description": {
+        "MS1": "Lot 1 material receoved (40%)",
+        "MS2": "All materoa; receoved (60%)"
+      },
+      "baselineStartMonth": "23-Nov",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "22-Dec",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 113801,
+          "Dec": 170702
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Telescope Assy I&T",
+      "fillerRow": true
+    },
+    {
+      "tasks/wp": "Create Telescope Assembly Planning",
+      "fillerRow": false,
+      "budgetHours": "182.99hrs",
+      "budgetDollars": 35310,
+      "evt": "40-60",
+      "description": {},
+      "baselineStartMonth": "11-Feb",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "17-Mar",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 14124,
+          "March": 21186,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Create WFE Test Procedure",
+      "fillerRow": false,
+      "budgetHours": "335.95hrs",
+      "budgetDollars": 70418,
+      "evt": "40-60",
+      "description": {},
+      "baselineStartMonth": "11-Feb",
+      "baselineStartYear": "Year 2",
+      "baselineFinishMonth": "24-Mar",
+      "baselineFinishYear": "Year 2",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 28167,
+          "March": 42251,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Build Telescope",
+      "fillerRow": false,
+      "budgetHours": "401.58hrs",
+      "budgetDollars": 77103,
+      "evt": "0-100",
+      "description": {},
+      "baselineStartMonth": "3-Jan",
+      "baselineStartYear": "Year 3",
+      "baselineFinishMonth": "31-Jan",
+      "baselineFinishYear": "Year 3",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 77103,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "FEW Test on Interferometer",
+      "fillerRow": false,
+      "budgetHours": "790.65hrs",
+      "budgetDollars": 152126,
+      "evt": "50-50",
+      "description": {},
+      "baselineStartMonth": "1-Feb",
+      "baselineStartYear": "Year 3",
+      "baselineFinishMonth": "21-Mar",
+      "baselineFinishYear": "Year 3",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 76063,
+          "March": 76063,
+          "April": 0
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Telescope Assy Sell-Off",
+      "fillerRow": true
+    },
+    {
+      "tasks/wp": "Telescope Assembly Requirements Sell-Off",
+      "fillerRow": false,
+      "budgetHours": "240.29hrs",
+      "budgetDollars": 48205,
+      "evt": "50-50",
+      "description": {},
+      "baselineStartMonth": "22-Mar",
+      "baselineStartYear": "Year 3",
+      "baselineFinishMonth": "25-Apr",
+      "baselineFinishYear": "Year 3",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 24103,
+          "April": 24103
+        }
+      ]
+    },
+    {
+      "tasks/wp": "Give Telescope Assy to SEIT",
+      "fillerRow": false,
+      "budgetHours": "0hrs",
+      "budgetDollars": 0,
+      "evt": "NO EV",
+      "description": {},
+      "baselineStartMonth": "25-Apr",
+      "baselineStartYear": "Year 3",
+      "baselineFinishMonth": "25-Apr",
+      "baselineFinishYear": "Year 3",
+      "yearOne": [
+        {
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearTwo": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0,
+          "May": 0,
+          "June": 0,
+          "July": 0,
+          "Aug": 0,
+          "Sep": 0,
+          "Oct": 0,
+          "Nov": 0,
+          "Dec": 0
+        }
+      ],
+      "yearThree": [
+        {
+          "Jan": 0,
+          "Feb": 0,
+          "March": 0,
+          "April": 0
+        }
+      ]
+    }
+  ]
+}

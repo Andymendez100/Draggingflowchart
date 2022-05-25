@@ -23,7 +23,6 @@ const DraggableCard: React.FC<{
       nodeRef={nodeRef}
       onDrag={updateXarrow}
       disabled={disabled.includes(cardData.id) ? true : false}
-      // bounds='#grid'
     >
       <div
         className='card'

@@ -1,0 +1,36 @@
+.MuiTableCell-root {
+    border-bottom: 0 !important;
+    line-height: 1 !important;
+    padding: 3px 8px !important;
+}
+
+.text-grid-container td {
+    /* border: .5px solid rgba(224, 224, 224, 1) */
+    border-top-style: solid;
+    border-left-style: solid;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-top-color: rgba(224, 224, 224, 1);
+    border-left-color: rgba(224, 224, 224, 1);
+}
+
+.text-grid-container td br {
+    display: none;
+}
+
+.all-borders {
+    border: 1px solid black !important;
+}
+
+.bottom-border {
+    border-bottom: 1px solid black !important;
+}
+
+.top-border {
+    border-top: 1px solid black !important;
+}
+
+.side-borders {
+    border-left: 1px solid black !important;
+    border-right: 1px solid black !important;
+}
