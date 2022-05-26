@@ -12,7 +12,56 @@ import TableData from './tableData.json';
 import { Input } from '@mui/material';
 
 // column-row : value
-const tableAnswers = {};
+const tableAnswers: { [key: string]: number } = {
+  '2-0': 49877,
+  '2-1': 49877,
+  '2-2': 49877,
+  '2-3': 49877,
+  '2-4': 49877,
+  '2-5': 49877,
+  '2-6': 49877,
+  '2-7': 49877,
+  '2-8': 49877,
+  '2-9': 49877,
+  '2-10': 49877,
+  '2-11': 49877,
+  '2-12': 49877,
+  '2-13': 49877,
+  '2-14': 49877,
+  '2-15': 49877,
+  '2-16': 49877,
+  '2-17': 49877,
+  '2-18': 49877,
+  '2-19': 49877,
+  '2-20': 49877,
+  '2-21': 49877,
+  '2-22': 49877,
+  '9-0': 35312,
+  '9-1': 35312,
+  '9-2': 47083,
+  '10-3': 51722,
+  '10-4': 51722,
+  '11-4': 49830,
+  '12-5': 27227,
+  '13-6': 32981,
+  '13-7': 49472,
+  '14-7': 8314,
+  '14-8': 24943,
+  '16-5': 4196,
+  '19-16': 156830,
+  '19-17': 235245,
+  '23-17': 113801,
+  '23-18': 170702,
+  '25-8': 14124,
+  '25-9': 21186,
+  '26-8': 28167,
+  '26-9': 42251,
+  '27-19': 77103,
+  '28-20': 76063,
+  '28-21': 76063,
+  '30-21': 24103,
+  '30-22': 24103,
+};
 
 // Create our number formatter.
 const formatter = new Intl.NumberFormat('en-US', {
@@ -34,7 +83,7 @@ const TextInputGrid: React.FC = React.memo(() => {
   const updateBAC = (rowNumber: number) => {
     // map throw row
     let totalValue = 0;
-    Array.from(Array(23)).map((data, index) => {
+    Array.from(Array(23)).map((data, index): void => {
       const columnToCheck = document.querySelector(
         `[data-row='${rowNumber}'] [data-column='${index}'] > input `
       ) as HTMLInputElement;
@@ -58,7 +107,7 @@ const TextInputGrid: React.FC = React.memo(() => {
   const updateTotalBAC = () => {
     // map throw row
     let totalValue = 0;
-    Array.from(Array(26)).map((data, index) => {
+    Array.from(Array(26)).map((data, index): void => {
       const columnToCheck = document.querySelector(
         `[data-row='${index}'] [data-column='${23}'] > input `
       ) as HTMLInputElement;
@@ -386,15 +435,38 @@ const TextInputGrid: React.FC = React.memo(() => {
           <TableBody>{renderRows()}</TableBody>
         </Table>
       </TableContainer>
-      {/* <button
+      <button
         type='button'
         onClick={() => {
+          for (let i = 0; i < 31; i++) {
+            for (let j = 0; j < 22; j++) {
+              const columnItem = document.querySelector(
+                `[data-row='${i}'] [data-column='${j}'] > input `
+              ) as HTMLInputElement;
+              if (columnItem !== null && columnItem.value !== '') {
+                const key = `${i}-${j}`;
+                const correctAnswer = tableAnswers[`${key}`];
+                console.log('tableAnswers', correctAnswer);
+                if (correctAnswer) {
+                  const deformattedValue = columnItem.value
+                    .replace('$', '')
+                    .replaceAll(',', '');
 
-
+                  if (correctAnswer === parseInt(deformattedValue)) {
+                    columnItem.style.backgroundColor = 'green';
+                  } else {
+                    columnItem.style.backgroundColor = 'orange';
+                  }
+                } else {
+                  columnItem.style.backgroundColor = 'red';
+                }
+              }
+            }
+          }
         }}
       >
         Submit
-      </button> */}
+      </button>
       Bac: {bacTotals}
     </>
   );
