@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react';
 import {
   Table,
   TableBody,
@@ -6,219 +6,76 @@ import {
   TableContainer,
   TableRow,
   TableHead,
-} from "@mui/material";
-import "./TextInputGrid.css";
+} from '@mui/material';
+import './TextInputGrid.css';
+import TableData from './tableData.json';
+import { Input } from '@mui/material';
 
-interface Col {
-  field: string;
-  headerName: string;
-}
-
-interface BacRow {
-  taskWp: string;
-  workPackage: string;
-  budgetHours: number;
-  budgetDollars: number;
-  baselineStart: string;
-  baselineFinish: string;
-  march: number;
-  april: number;
-  may: number;
-  june: number;
-  july: number;
-  aug: number;
-  sep: number;
-  oct: number;
-  nov: number;
-  dec: number;
-  jan: number;
-  feb: number;
-  BAC: number | string;
-}
-
-// Used for simple month checks - based on formatting in data.json
-const months = [
-  "march",
-  "april",
-  "may",
-  "june",
-  "july",
-  "aug",
-  "sep",
-  "oct",
-  "nov",
-  "dec",
-  "jan",
-  "feb",
-];
+// column-row : value
+const tableAnswers = {};
 
 // Create our number formatter.
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
 });
 
-const convertToCamelCase = (word: string) => {
-  return word
-    .trim()
-    .toLowerCase()
-    .replace(/([^A-Z0-9]+)(.)/gi, function () {
-      return arguments[2].toUpperCase();
-    });
+const isEmpty = (object: any) => {
+  for (const property in object) {
+    return false;
+  }
+  return true;
 };
 
-const isMonth = (month: string) => months.includes(month.toLowerCase());
+const TextInputGrid: React.FC = React.memo(() => {
+  const [bacTotals, setBacTotals] = useState('');
 
-const TextInputGrid: React.FC<{ data: any; setCost: number }> = ({
-  data,
-  setCost,
-}) => {
-  const [tableData, setTableData] = useState(data.data);
-  const [bacTotals, setBacTotals] = useState(0);
+  const updateBAC = (rowNumber: number) => {
+    // map throw row
+    let totalValue = 0;
+    Array.from(Array(23)).map((data, index) => {
+      const columnToCheck = document.querySelector(
+        `[data-row='${rowNumber}'] [data-column='${index}'] > input `
+      ) as HTMLInputElement;
+      if (columnToCheck.value !== '') {
+        const deformattedValue = columnToCheck.value
+          .replace('$', '')
+          .replaceAll(',', '');
 
-  const columns: Col[] = Object.keys(tableData[0]).map((header) => {
-    return {
-      field: header,
-      headerName: header,
-    };
-  });
-
-  columns.push({
-    field: "BAC",
-    headerName: "BAC",
-  });
-
-  const rows = tableData.map((row: { [x: string]: number }) => {
-    // filter all items that aren't months, map to those values and add all values together
-    const bac = Object.keys(row)
-      .filter((cell) => isMonth(cell))
-      .map((cell) => row[cell])
-      .reduce((a, b) => Number(a) + Number(b));
-
-    return { ...row, BAC: bac };
-  });
-
-  useEffect(() => {
-    setBacTotals(
-      rows
-        .map((row: { BAC: string }) => {
-          if (row.BAC) return Number(row.BAC.replace(/[^0-9.-]+/g, ""));
-        })
-        .filter((b: number) => !isNaN(b))
-        .reduce((a: number, b: number) => Number(a) + Number(b))
-    );
-  }, [rows]);
-
-  rows.push({
-    filler: "",
-    total: formatter.format(bacTotals),
-  });
-
-  const generateTableHeaders = (col: Col[]) => {
-    return col.map((header: Col) => {
-      return (
-        <TableCell
-          key={header.field}
-          className={
-            isMonth(header.headerName)
-              ? "top-border bottom-border"
-              : "all-borders"
-          }
-        >
-          {header.headerName}
-        </TableCell>
-      );
+        totalValue += parseInt(deformattedValue);
+      }
     });
+
+    const rowBac = document.querySelector(
+      `[data-row='${rowNumber}'] [data-column='${23}'] > input `
+    ) as HTMLInputElement;
+    const updatedValue = formatter.format(totalValue);
+    rowBac.value = updatedValue;
+    updateTotalBAC();
   };
 
-  // add editable feature only if under a month header/column
-  const generateTableRows = (rows: readonly BacRow[]) => {
-    // each cell
-    const cellData = (items: BacRow) => {
-      const keys = Object.keys(items);
-      const parent = items[keys[0] as keyof BacRow];
-
-      return keys.map((item) => {
-        let attributes: any = [];
-
-        if (isMonth(item)) {
-          attributes.contentEditable = true;
-          attributes.suppressContentEditableWarning = true;
-          attributes["data-month"] = item;
-          attributes["data-parent"] = parent;
-          attributes.style = { ...attributes.style, textAlign: "right" };
-        }
-
-        // spacing for total BAC
-        if (item === "filler") {
-          attributes.colSpan = 18;
-        }
-
-        // format bac as us money
-        if (item === "BAC") {
-          // check exceeding set cost for each task/row
-          if (items[item] >= setCost) attributes.style = { color: "red" };
-
-          // align right
-          attributes.style = { ...attributes.style, textAlign: "right" };
-
-          // formatter
-          items[item] = formatter.format(items[item] as number);
-        }
-
-        return (
-          <TableCell
-            key={item}
-            {...attributes}
-            className={`${
-              isMonth(item) || item === "total" || item === "filler"
-                ? ""
-                : "side-borders"
-            } ${item === "total" || item === "filler" ? "top-border" : ""}`}
-          >
-            {items[item as keyof BacRow]}
-          </TableCell>
-        );
-      });
-    };
-    // each row
-    return rows.map((row: BacRow, index: number) => {
-      return (
-        <TableRow key={index} data-row={index}>
-          {cellData(row)}
-        </TableRow>
-      );
+  const updateTotalBAC = () => {
+    // map throw row
+    let totalValue = 0;
+    Array.from(Array(26)).map((data, index) => {
+      const columnToCheck = document.querySelector(
+        `[data-row='${index}'] [data-column='${23}'] > input `
+      ) as HTMLInputElement;
+      if (columnToCheck !== null && columnToCheck.value !== '') {
+        const deformattedValue = columnToCheck.value
+          .replace('$', '')
+          .replaceAll(',', '');
+        totalValue += parseInt(deformattedValue);
+      }
     });
+    console.log(totalValue);
+    // BAC NUMBER HERE
+    const updatedValue = formatter.format(totalValue);
+    setBacTotals(updatedValue);
   };
 
-  // update cell
-  const handleCellUpdate = (event: any) => {
-    // return early if not a TD element
-    if (event.target.tagName !== "TD") return;
-
-    // prepare data
-    const parentRow = event.target.parentNode.dataset.row;
-    const month = event.target.dataset.month;
-    const dataValue = event.target.innerText;
-
-    // create copy of current state
-    const data = [...tableData];
-
-    // update with new value
-    data[parentRow][month] = dataValue;
-
-    // update state
-    setTableData(data);
-  };
-
-  // update cell when enter pressed
-  const handleEnterPressed = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter") {
-      handleCellUpdate(event);
-    }
-  };
-
-  // check input is valid TODO: update to use event keys
+  // // check input is valid TODO: update to use event keys
   const handleInput = (event: React.KeyboardEvent) => {
     let charToCheck = String.fromCharCode(event.keyCode);
 
@@ -243,22 +100,304 @@ const TextInputGrid: React.FC<{ data: any; setCost: number }> = ({
     }
   };
 
+  const getDescription = (descriptionObject: any) => {
+    if (isEmpty(descriptionObject)) return;
+    return Object.keys(descriptionObject).map(function (key) {
+      return (
+        <>
+          <p>
+            {key}: {descriptionObject[key]}
+          </p>
+          <br />
+        </>
+      );
+    });
+  };
+
+  const renderRows = () => {
+    return TableData.data.map((row: any, i: number) => {
+      if (row.fillerRow) {
+        return (
+          <TableRow key={i}>
+            <TableCell className='side-borders'>{row['tasks/wp']}</TableCell>
+            {Array.from(Array(30)).map(() => {
+              return <TableCell className='side-borders stripes' />;
+            })}
+          </TableRow>
+        );
+      }
+      return (
+        <TableRow data-row={i} key={i}>
+          <TableCell className='side-borders'>{row['tasks/wp']}</TableCell>
+          <TableCell className='side-borders'>{row.budgetHours}</TableCell>
+          <TableCell className='side-borders'>{row.budgetDollars}</TableCell>
+          <TableCell className='side-borders'>{row.evt}</TableCell>
+          <TableCell className='side-borders'>
+            {getDescription(row.description)}
+          </TableCell>
+          <TableCell className='side-borders'>
+            <TableCell>{row.baselineStartMonth}</TableCell>
+            <TableCell>{row.baselineStartYear}</TableCell>
+          </TableCell>
+          <TableCell className='side-borders'>
+            <TableCell>{row.baselineFinishMonth}</TableCell>
+            <TableCell>{row.baselineFinishYear}</TableCell>
+          </TableCell>
+          {Array.from(Array(23)).map((data, index) => {
+            return (
+              <TableCell sx={{ minWidth: 50 }}>
+                <Input
+                  data-column={index}
+                  type='text'
+                  onFocus={(event) => {
+                    if (event.target.value !== '') {
+                      const deformattedValue = event.target.value
+                        .replace('$', '')
+                        .replaceAll(',', '');
+                      event.target.value = deformattedValue;
+                    }
+                  }}
+                  onBlur={(event) => {
+                    if (event.target.value !== '') {
+                      updateBAC(i);
+                      const updatedValue = formatter.format(
+                        parseInt(event.target.value)
+                      );
+                      event.target.value = updatedValue;
+                    }
+                  }}
+                  onKeyDown={handleInput}
+                />
+              </TableCell>
+            );
+          })}
+          <TableCell>
+            <Input data-column={23} type='text' fullWidth disabled />
+          </TableCell>
+        </TableRow>
+      );
+    });
+  };
+
   return (
-    <TableContainer className="text-grid-container">
-      <Table
-        sx={{ maxWidth: 1270, maxHeight: 696, backgroundColor: "#F5F5F5" }}
-        size="small"
-        onBlur={handleCellUpdate}
-        onKeyUp={handleEnterPressed}
-        onKeyDown={handleInput}
+    <>
+      <TableContainer className='text-grid-container' sx={{ maxHeight: 630 }}>
+        <Table sx={{ backgroundColor: '#F5F5F5' }} stickyHeader>
+          <TableHead>
+            <TableRow>
+              <TableCell className='all-borders' />
+              <TableCell className='all-borders' />
+              <TableCell className='all-borders' />
+              <TableCell className='all-borders' />
+              <TableCell className='all-borders' />
+              <TableCell className='all-borders' />
+              <TableCell className='all-borders' />
+              <TableCell className='all-borders' align='center' colSpan={7}>
+                Year 1
+              </TableCell>
+              <TableCell className='all-borders' align='center' colSpan={12}>
+                Year 2
+              </TableCell>
+              <TableCell className='all-borders' align='center' colSpan={4}>
+                Year 3
+              </TableCell>
+              <TableCell className='all-borders' />
+            </TableRow>
+            <TableRow>
+              <TableCell className='all-borders' sx={{ minWidth: 300 }}>
+                Task/WP
+              </TableCell>
+              <TableCell className='all-borders'>Budget Hours</TableCell>
+              <TableCell className='all-borders'>Budget Dollars</TableCell>
+              <TableCell className='all-borders' sx={{ minWidth: 100 }}>
+                EVT
+              </TableCell>
+              <TableCell className='all-borders' sx={{ minWidth: 350 }}>
+                Milestone Description
+              </TableCell>
+              <TableCell className='all-borders'>Baseline Start</TableCell>
+              <TableCell className='all-borders'>BaseLine Finish</TableCell>
+              <TableCell className='all-borders' sx={{ minWidth: 70 }}>
+                June
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                July
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Aug.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Sept.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Oct.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Nov.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Dec.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Jan.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Feb.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Mar.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Apr.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                May
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                June
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                July
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Aug.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Sept.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Oct.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Nov.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Dec.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Jan.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Feb.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Mar.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                Apr.
+              </TableCell>
+              <TableCell
+                className='all-borders'
+                align='center'
+                sx={{ minWidth: 70 }}
+              >
+                BAC
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{renderRows()}</TableBody>
+        </Table>
+      </TableContainer>
+      {/* <button
+        type='button'
+        onClick={() => {
+
+
+        }}
       >
-        <TableHead>
-          <TableRow>{generateTableHeaders(columns)}</TableRow>
-        </TableHead>
-        <TableBody>{generateTableRows(rows)}</TableBody>
-      </Table>
-    </TableContainer>
+        Submit
+      </button> */}
+      Bac: {bacTotals}
+    </>
   );
-};
+});
 
 export default TextInputGrid;
